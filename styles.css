@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #ff0000;
+    overflow: hidden; /* Para que los elementos flotantes no salgan del viewport */
+}
+
+.container {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 12em;
+    color: white;
+    letter-spacing: 10px;
+    text-shadow: 0 0 30px rgba(255, 255, 255, 0.9), 
+                 0 0 50px rgba(255, 255, 255, 0.8), 
+                 0 0 80px rgba(255, 255, 255, 0.7), 
+                 0 0 100px rgba(255, 255, 255, 0.6);
+    animation: glow 2.5s infinite;
+    font-family: 'Cursive', sans-serif;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.7),
+                     0 0 30px rgba(255, 255, 255, 0.6);
+    }
+    50% {
+        text-shadow: 0 0 60px rgba(255, 255, 255, 1),
+                     0 0 80px rgba(255, 255, 255, 1),
+                     0 0 100px rgba(255, 255, 255, 0.9);
+        transform: scale(1.1);
+    }
+    100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.7),
+                     0 0 30px rgba(255, 255, 255, 0.6);
+        transform: scale(1);
+    }
+}
+
+/* Animación para corazones, perlas y diamantes */
+.floating {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 10s linear infinite;
+    opacity: 0.8;
+}
+
+.heart {
+    background-color: black;
+    width: 40px;
+    height: 40px;
+    clip-path: polygon(50% 0%, 100% 38%, 79% 100%, 50% 81%, 21% 100%, 0% 38%);
+}
+
+.pearl {
+    background-color: white;
+    width: 20px;
+    height: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+.diamond {
+    background-color: #00ffff;
+    width: 30px;
+    height: 30px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0.2;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0.2;
+    }
+}
